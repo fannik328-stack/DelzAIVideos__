@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071a1b">
+<title>DelzAI — приложение</title>
+<style>
+:root{color-scheme:dark;--mint:#72f4d4;--cyan:#8cecff}
+*{box-sizing:border-box}
+html{min-height:100%;background:#061314}
+body{margin:0;min-height:100vh;overflow-x:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#f3fffc;background:
+ radial-gradient(ellipse at 15% 18%,#0e665c 0,transparent 38%),
+ radial-gradient(ellipse at 90% 12%,#124a66 0,transparent 35%),
+ radial-gradient(ellipse at 55% 100%,#123f3b 0,transparent 42%),#061314}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+.ambient{position:fixed;width:360px;height:360px;border-radius:50%;filter:blur(70px);opacity:.24;pointer-events:none;background:#19e8b4;left:-150px;top:55%}
+.ambient.two{left:auto;right:-160px;top:8%;background:#30b9ff}
+main{width:min(1040px,calc(100% - 32px));margin:auto;padding:34px 0 56px;position:relative}
+nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:58px;color:#c9e9e3;font-size:14px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:.04em}
+.brand img{width:34px;height:34px;border-radius:10px}
+.pill{padding:9px 14px;border:1px solid #ffffff24;border-radius:99px;background:#ffffff0b;backdrop-filter:blur(18px)}
+.hero{display:block;max-width:850px}
+.eyebrow{color:#8fffe0;font-size:12px;text-transform:uppercase;letter-spacing:.22em;font-weight:700}
+.title-lockup{display:flex;align-items:center;gap:22px;margin:18px 0 22px}.title-lockup h1{font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-.07em;margin:0}.title-lockup img{width:clamp(76px,12vw,112px);height:clamp(76px,12vw,112px);object-fit:cover;border-radius:25px;box-shadow:0 16px 48px #0008,0 0 34px #56f5d644;flex:none}
+h1 span{background:linear-gradient(110deg,#fff 10%,#8effde 55%,#7cdfff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,2vw,19px);line-height:1.7;color:#c2dcd7;max-width:560px}
+.actions{display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.download{display:inline-flex;align-items:center;gap:12px;padding:16px 22px;border-radius:18px;color:#06201b;text-decoration:none;font-weight:800;background:linear-gradient(130deg,#a3ffe6,#61eacb 55%,#8ceaff);box-shadow:0 12px 42px #49e9c555;transition:transform .25s,filter .25s}
+.download:hover{transform:translateY(-4px) scale(1.025);filter:brightness(1.08)}
+.download svg{width:21px}
+.meta{font-size:13px;color:#9dbbb5}
+.section{margin-top:70px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{border:1px solid #ffffff25;border-radius:28px;padding:25px;background:linear-gradient(135deg,#ffffff1b,#ffffff07);backdrop-filter:blur(24px) saturate(160%);box-shadow:inset 1px 1px 1px #ffffff26,0 20px 60px #0002}
+.panel h2{font-size:19px;margin:0 0 10px;letter-spacing:-.03em}.panel p{margin:0;color:#b9d2cc;line-height:1.65;font-size:14px}
+.author{display:flex;align-items:center;gap:12px}.author-mark{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(140deg,#9effe4,#59cdbd);color:#07372d;font-weight:900}
+footer{padding:30px 4px 0;text-align:center;color:#799b94;font-size:12px}
+@media(max-width:720px){main{padding-top:22px}nav{margin-bottom:35px}.title-lockup{gap:15px}.title-lockup img{border-radius:19px}.title-lockup h1{font-size:58px}.section{grid-template-columns:1fr;margin-top:30px}.lead{max-width:unset}}
+</style>
+
+<style>
+.web-version{display:inline-block;margin-top:16px;color:#8cecff;text-decoration:none;font-weight:700;font-size:13px;border-bottom:1px solid #8cecff66;padding-bottom:3px;transition:color .2s,border-color .2s}
+.web-version:hover{color:#a3ffe6;border-color:#a3ffe6}
+</style>
+
+</head>
+<body>
+<div class="ambient"></div><div class="ambient two"></div>
+<main>
+<nav><div class="brand"><img src="icon.png" alt="Иконка DelzAI">DELZAI</div><div class="pill">Android · APK</div></nav>
+<section class="hero">
+ <div>
+  <div class="eyebrow">Your creative AI space</div>
+   <div class="title-lockup"><img src="icon.png" alt=""><h1><span>DelzAI</span><br>Videos</h1></div>
+  <p class="lead">Генератор AI-видео, который превращает ваши идеи в визуальные истории. Задайте направление для ролика и создайте собственное видео.</p>
+  <div class="actions">
+   <a class="download" href="#" id="download-apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>Скачать APK</a>
+   <span class="meta">Файл приложения · Android</span>
+  </div>
+ </div>
+</section>
+<section class="section">
+ <article class="panel"><h2>О приложении</h2><p>DelzAI Videos — приложение для генерации видео с помощью искусственного интеллекта. Создавайте визуальные истории, экспериментируйте с идеями и воплощайте задумки в движении.</p></article>
+ <article class="panel"><h2>Автор приложения</h2><div class="author"><div class="author-mark">D</div><div><b>Delzoom3434</b><p>Автор и разработчик</p></div></div></article>
+</section>
+<footer>© Delzoom3434 · DelzAI Videos
+  <div><a class="web-version" href="DelzAI_Standalone.html">Попробовать ВЕБ версию</a></div>
+</footer>
+</main>
+
+<script>
+(()=>{
+  const link=document.getElementById('download-apk');
+  link.href='DelzAI.apk';
+  link.setAttribute('download','DelzAI.apk');
+})();
+</script>
+
+</body></html>
